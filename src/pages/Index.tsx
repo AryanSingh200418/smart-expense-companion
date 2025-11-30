@@ -36,9 +36,9 @@ const pieData = [
 ];
 
 const statCards = [
-  { title: "Total Balance", amount: "$47,923", icon: Wallet, color: "bg-primary" },
-  { title: "Total Income", amount: "$61,000", icon: TrendingUp, color: "bg-warning" },
-  { title: "Total Expenses", amount: "$13,077", icon: TrendingDown, color: "bg-destructive" },
+  { title: "Total Balance", amount: "₹47,923", icon: Wallet, color: "bg-primary" },
+  { title: "Total Income", amount: "₹61,000", icon: TrendingUp, color: "bg-warning" },
+  { title: "Total Expenses", amount: "₹13,077", icon: TrendingDown, color: "bg-destructive" },
 ];
 
 // New data for expenses
@@ -120,7 +120,7 @@ export default function Index() {
                       transaction.type === "income" ? "text-success" : "text-destructive"
                     }`}
                   >
-                    {transaction.type === "income" ? "+" : "-"} ${transaction.amount.toLocaleString()}
+                    {transaction.type === "income" ? "+" : "-"} ₹{transaction.amount.toLocaleString()}
                     {transaction.type === "income" ? (
                       <TrendingUp className="w-4 h-4" />
                     ) : (
@@ -154,7 +154,7 @@ export default function Index() {
                     ))}
                   </Pie>
                   <Tooltip 
-                    formatter={(value: number) => [`$${value.toLocaleString()}`, '']}
+                    formatter={(value: number) => [`₹${value.toLocaleString()}`, '']}
                     contentStyle={{ 
                       backgroundColor: 'hsl(0, 0%, 100%)', 
                       border: '1px solid hsl(220, 13%, 91%)',
@@ -166,7 +166,7 @@ export default function Index() {
               </ResponsiveContainer>
               <div className="text-center mt-4">
                 <p className="text-muted-foreground">Total Balance</p>
-                <p className="text-3xl font-bold text-foreground">$47,923</p>
+                <p className="text-3xl font-bold text-foreground">₹47,923</p>
               </div>
             </CardContent>
           </Card>
@@ -198,7 +198,7 @@ export default function Index() {
                     </div>
                   </div>
                   <span className="font-semibold flex items-center gap-1 text-destructive">
-                    - ${expense.amount.toLocaleString()}
+                    - ₹{expense.amount.toLocaleString()}
                     <TrendingDown className="w-4 h-4" />
                   </span>
                 </div>
@@ -218,7 +218,7 @@ export default function Index() {
                   <XAxis dataKey="name" stroke="hsl(220, 9%, 46%)" />
                   <YAxis stroke="hsl(220, 9%, 46%)" />
                   <Tooltip 
-                    formatter={(value: number) => [`$${value}`, 'Amount']}
+                    formatter={(value: number) => [`₹${value}`, 'Amount']}
                     contentStyle={{ 
                       backgroundColor: 'hsl(0, 0%, 100%)', 
                       border: '1px solid hsl(220, 13%, 91%)',
@@ -260,7 +260,7 @@ export default function Index() {
                     ))}
                   </Pie>
                   <Tooltip 
-                    formatter={(value: number) => [`$${value.toLocaleString()}`, '']}
+                    formatter={(value: number) => [`₹${value.toLocaleString()}`, '']}
                     contentStyle={{ 
                       backgroundColor: 'hsl(0, 0%, 100%)', 
                       border: '1px solid hsl(220, 13%, 91%)',
@@ -272,7 +272,7 @@ export default function Index() {
               </ResponsiveContainer>
               <div className="text-center mt-2">
                 <p className="text-muted-foreground">Total Income</p>
-                <p className="text-3xl font-bold text-foreground">$98,200</p>
+                <p className="text-3xl font-bold text-foreground">₹98,200</p>
               </div>
             </CardContent>
           </Card>
@@ -301,7 +301,7 @@ export default function Index() {
                     </div>
                   </div>
                   <span className="font-semibold flex items-center gap-1 text-success">
-                    + ${income.amount.toLocaleString()}
+                    + ₹{income.amount.toLocaleString()}
                     <TrendingUp className="w-4 h-4" />
                   </span>
                 </div>
