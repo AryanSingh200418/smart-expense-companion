@@ -52,7 +52,7 @@ const savingsProjection = [
 
 const alerts = [
   { type: "warning", message: "Entertainment spending may exceed budget by 19% next month", icon: AlertTriangle },
-  { type: "success", message: "On track to save $10,200 by April 2026", icon: Target },
+  { type: "success", message: "On track to save ₹10,200 by April 2026", icon: Target },
   { type: "info", message: "Transportation costs trending down - great job!", icon: TrendingDown },
 ];
 
@@ -162,9 +162,9 @@ export default function Predictions() {
                   <div className="flex items-center justify-between">
                     <span className="font-medium text-foreground">{cat.category}</span>
                     <div className="flex items-center gap-2">
-                      <span className="text-muted-foreground">${cat.current}</span>
+                      <span className="text-muted-foreground">₹{cat.current}</span>
                       <span className="text-muted-foreground">→</span>
-                      <span className="font-semibold text-foreground">${cat.predicted}</span>
+                      <span className="font-semibold text-foreground">₹{cat.predicted}</span>
                       <span className={`flex items-center text-sm ${
                         cat.trend === "up" ? "text-destructive" : "text-success"
                       }`}>
@@ -217,7 +217,7 @@ export default function Predictions() {
               </ResponsiveContainer>
               <div className="mt-4 p-4 bg-success/10 rounded-lg">
                 <p className="text-success font-semibold">
-                  You're projected to reach $10,200 in savings by April!
+                  You're projected to reach ₹10,200 in savings by April!
                 </p>
               </div>
             </CardContent>
